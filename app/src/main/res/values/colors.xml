@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <!-- hunter palettes. -->
+    <color name="hitam">#090909</color>
+    <color name="merah">#E63946</color>
+    <color name="putih">#F1FAEE</color>
+    <color name="biruterang">#A8DADC</color>
+    <color name="biru">#457B9D</color>
+    <color name="birugelap">#1D3557</color>
+
+</resources>

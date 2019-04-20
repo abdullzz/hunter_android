@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">hunter</string>
+    <!--Login strings-->
+    <string name="login">Log In</string>
+    <string name="signup">Sign Up</string>
+    <string name="alamatemail">Alamat Email</string>
+    <string name="katasandi">Kata Sandi</string>
+    <string name="katasandilagi">Ulangi Kata Sandi</string>
+    <string name="ingatsaya">Ingat saya !</string>
+    <string name="lupakatasandi">Lupa kata sandi ?</string>
+    <string name="daftar">Daftar Menjadi Hunter</string>
+    <string name="daftarsignup">Daftar / Sign Up</string>
+</resources>
