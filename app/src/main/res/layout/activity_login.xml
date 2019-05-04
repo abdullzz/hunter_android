@@ -46,14 +46,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:errorEnabled="true">
+
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:hint="@string/alamatemail"
                     android:inputType="textEmailAddress"
                     android:textColor="@color/birugelap"
-                    app:backgroundTint="@color/birugelap"
-                    android:hint="@string/alamatemail"
-                    />
+                    app:backgroundTint="@color/birugelap" />
 
             </android.support.design.widget.TextInputLayout>
             <!--<EditText-->
@@ -82,17 +83,18 @@
                 android:id="@+id/text_input_password"
                 app:passwordToggleEnabled="true"
                 app:errorEnabled="true">
+
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:autofillHints=""
                     android:ems="10"
+                    android:fontFamily="@font/montserrat_medium"
                     android:hint="@string/katasandi"
                     android:inputType="textPassword"
                     android:textColor="@color/birugelap"
-                    app:backgroundTint="@color/birugelap"
-                    />
+                    app:backgroundTint="@color/birugelap" />
             </android.support.design.widget.TextInputLayout>
         </LinearLayout>
 
@@ -119,13 +121,13 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="50dp"
                 android:layout_weight="1"
-                android:text="@string/lupakatasandi"
-                android:textColor="@color/putih"
-                android:textAllCaps="false"
                 android:background="@drawable/lupakatasandi_button"
+                android:fontFamily="@font/montserrat_semibold"
                 android:foreground="?attr/selectableItemBackground"
                 android:onClick="forgotPassword"
-                />
+                android:text="@string/lupakatasandi"
+                android:textAllCaps="false"
+                android:textColor="@color/putih" />
         </LinearLayout>
 
         <LinearLayout
@@ -139,14 +141,14 @@
                 android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
-                android:textSize="16dp"
+                android:background="@drawable/login_button"
+                android:fontFamily="@font/montserrat_semibold"
+                android:foreground="?attr/selectableItemBackground"
+                android:onClick="confirmInput"
                 android:text="@string/login"
                 android:textAllCaps="false"
-                android:background="@drawable/login_button"
-                android:foreground="?attr/selectableItemBackground"
                 android:textColor="@color/putih"
-                android:onClick="confirmInput"
-                />
+                android:textSize="16dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -160,14 +162,14 @@
                 android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
-                android:text="@string/daftar"
-                android:textSize="16dp"
-                android:textAllCaps="false"
                 android:background="@drawable/daftar_button"
+                android:fontFamily="@font/montserrat_semibold"
                 android:foreground="?attr/selectableItemBackground"
-                android:padding="10dp"
                 android:onClick="signUp"
-                />
+                android:padding="10dp"
+                android:text="@string/daftar"
+                android:textAllCaps="false"
+                android:textSize="16dp" />
         </LinearLayout>
     </LinearLayout>
 

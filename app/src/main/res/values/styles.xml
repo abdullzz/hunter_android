@@ -17,6 +17,6 @@
     </style>
 
     <style name="HunterTheme" parent="Theme.AppCompat.Light.NoActionBar">
-
+        <item name="colorAccent">@color/orange</item>
     </style>
 </resources>

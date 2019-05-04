@@ -10,4 +10,8 @@
     <string name="lupakatasandi">Lupa kata sandi ?</string>
     <string name="daftar">Daftar Menjadi Hunter</string>
     <string name="daftarsignup">Daftar / Sign Up</string>
+    <string name="cekemail">Cek Email</string>
+    <string name="namalengkap">Nama Lengkap</string>
+    <string name="perbaruikatasandi">Perbarui Kata Sandi</string>
+    <string name="logout">Log Out / Keluar</string>
 </resources>

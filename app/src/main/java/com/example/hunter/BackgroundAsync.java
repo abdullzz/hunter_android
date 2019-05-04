@@ -48,6 +48,7 @@ public class BackgroundAsync extends AsyncTask<String,Void,String> {
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream,"iso-8859-1"));
                 String result="";
                 String line="";
+
                 while((line = bufferedReader.readLine())!= null) {
                     result += line;
                 }
