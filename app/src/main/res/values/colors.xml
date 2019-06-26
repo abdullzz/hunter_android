@@ -2,7 +2,15 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#E63946</color>
+
+    <color name="dark_blue">#3023AE</color>
+    <color name="purple">#C86DD7</color>
+
+    <color name="login_form_details">#ccffffff</color>
+    <color name="login_form_details_light">#1affffff</color>
+    <color name="login_form_details_medium">#66ffffff</color>
+
     <!-- hunter palettes. -->
     <color name="hitam">#090909</color>
     <color name="merah">#E63946</color>
@@ -11,5 +19,4 @@
     <color name="biru">#457B9D</color>
     <color name="birugelap">#1D3557</color>
     <color name="orange">#F05E23</color>
-
 </resources>

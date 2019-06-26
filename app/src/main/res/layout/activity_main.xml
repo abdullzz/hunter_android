@@ -1,110 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:theme="@style/HunterTheme"
-    android:background="@color/putih">
+    android:background="@drawable/bg_login">
 
-
-    <LinearLayout
+    <FrameLayout
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:weightSum="1.0"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="49dp">
+        android:layout_above="@id/bottom_navigation"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight=".30"
-            android:weightSum="2"
-            android:background="@drawable/profilegradient"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_weight="1.3"
-                android:weightSum="2"
-                android:gravity="center|right">
-
-                <android.support.v7.widget.CardView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:elevation="12dp"
-                    android:id="@+id/view2"
-                    app:cardCornerRadius="40dp"
-                    android:layout_centerHorizontal="true"
-                    android:innerRadius="0dp"
-                    android:shape="ring"
-                    android:thicknessRatio="1.9"
-                    android:layout_gravity="center_vertical|right">
-                    <ImageView
-                        android:layout_height="90dp"
-                        android:layout_width="match_parent"
-                        android:id="@+id/imageView1"
-                        android:src="@drawable/logoofficialhunter"
-                        android:layout_alignParentTop="true"
-                        android:layout_centerHorizontal="true">
-                    </ImageView>
-                </android.support.v7.widget.CardView>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_weight=".7"
-                android:paddingLeft="20dp">
-
-                <TextView
-                    android:id="@+id/viewnamalengkap"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:fontFamily="@font/montserrat_semibold"
-                    android:text="TextView"
-                    android:textColor="@color/putih"
-                    android:textSize="24sp"
-                    android:gravity="center_vertical"/>
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@color/putih"
-            android:layout_weight=".66"
-            android:layout_gravity="center">
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/putih"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/logout_button"
-                android:fontFamily="@font/montserrat_semibold"
-                android:foreground="?attr/selectableItemBackground"
-                android:gravity="center"
-                android:padding="10dp"
-                android:text="@string/logout"
-                android:textAlignment="center"
-                android:textAllCaps="false"
-                android:textColor="@color/putih"
-                android:textSize="16dp" />
-        </LinearLayout>
-    </LinearLayout>
-</android.support.constraint.ConstraintLayout>
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_navigation"
+        android:background="?android:attr/windowBackground"
+        app:labelVisibilityMode="labeled"
+        app:itemIconTint="@color/biru"
+        app:itemTextColor="@color/birugelap"
+        />
+</RelativeLayout>

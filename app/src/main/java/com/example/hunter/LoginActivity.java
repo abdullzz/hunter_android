@@ -4,13 +4,9 @@ import android.content.Intent;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.util.Base64;
 import android.util.Log;
 import android.view.View;
-import android.widget.CheckBox;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -25,104 +21,48 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class LoginActivity extends AppCompatActivity {
 
+    final String LOGIN_URL = "https://hunter.co.id/hunter/api/users/login";
     private TextInputLayout textInputEmail;
     private TextInputLayout textInputPassword;
-    final String LOGIN_URL = "http://192.168.100.2/hunterbinus/hunterapi/public/api/dologin";
-    public static String token_now = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
         textInputEmail = findViewById(R.id.text_input_email);
         textInputPassword = findViewById(R.id.text_input_password);
-
-
     }
 
-    public void rememberMe(View view) {
-        boolean checked = ((CheckBox) findViewById(R.id.checkBox)).isChecked();
-        if (checked) {
-        } //proses ingat saya
+    public void DaftarActivity(View v){
+        Intent gotoDaftarActivity = new Intent(LoginActivity.this, DaftarActivity.class);
+        startActivity(gotoDaftarActivity);
     }
 
-
-    private boolean validateEmail() {
-        String emailInput = textInputEmail.getEditText().getText().toString().trim();
-
-        String regex = "^[A-Za-z0-9+_.-]+@(.+)$"; // boleh alfanumerik
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(emailInput);
-
-        if (emailInput.isEmpty()) {
-            textInputEmail.setError("Email tidak boleh kosong");
-            return false;
-        } else if (!matcher.matches()) {
-            textInputEmail.setError("Format email salah");
-            return false;
-        } else {
-            textInputEmail.setError(null);
-            return true;
-        }
+    public void ForgotActivity(View v){
+        Intent gotoForgotActivity = new Intent(LoginActivity.this, ForgotActivity.class);
+        startActivity(gotoForgotActivity);
     }
 
-    private boolean validatePassword() {
-        String passwordInput = textInputPassword.getEditText().getText().toString().trim();
-
-        if (passwordInput.isEmpty()) {
-            textInputPassword.setError("Password tidak boleh kosong");
-            return false;
-        } else if (passwordInput.length() < 8) {
-            textInputPassword.setError("Password minimal 8 karakter");
-            return false;
-        } else {
-            textInputPassword.setError(null);
-            return true;
-        }
+    public void checkLogin(View v){
+        Intent gotoMainActivity = new Intent(LoginActivity.this, MainActivity.class);
+        gotoMainActivity.putExtra("id_user", "21");
+        gotoMainActivity.putExtra("nama_lengkap", "Abdullah Said Mashabi Abdullah");
+        gotoMainActivity.putExtra("alamat", "Jl. Cakra Muliya Blok T.72 Cinere, Limo, Depok");
+        gotoMainActivity.putExtra("no_ktp", "12345678910121416");
+        gotoMainActivity.putExtra("no_hp", "0811133505");
+        gotoMainActivity.putExtra("point", "1250");
+        gotoMainActivity.putExtra("picture", "12412.jpg");
+        startActivity(gotoMainActivity);
     }
 
-    public void confirmInput(View v) {
-        if (!validateEmail() | !validatePassword()) {
-            return;
-        }
-        String emailInput = textInputEmail.getEditText().getText().toString().trim();
-        String passwordInput = textInputPassword.getEditText().getText().toString().trim();
-        String type = "login";
-        checkLogin();
-//        BackgroundAsync sync = new BackgroundAsync(this);
-//        sync.execute(type, emailInput, passwordInput);
-//        String input = "Email: " + textInputEmail.getEditText().getText().toString();
-//        input += "\n";
-//        input += "Password: " + textInputPassword.getEditText().getText().toString();
-//
-//        Toast.makeText(this, input,Toast.LENGTH_SHORT).show();
-//        menu(v);
-//        rememberMe(v);
-    }
+    public void proceedLogin(View v){
+//        Intent gotochecklogin = new Intent(LoginActivity.this, MainActivity.class);
+//        startActivity(gotochecklogin);
 
-    public void signUp(View v) {
-        Intent gotoSignupActivity = new Intent(LoginActivity.this, SignupActivity.class);
-        startActivity(gotoSignupActivity);
-    }
-
-    public void forgotPassword(View v) {
-        Intent gotoForgotpasswordActivity = new Intent(LoginActivity.this, ForgotpasswordActivity.class);
-        startActivity(gotoForgotpasswordActivity);
-    }
-
-    public void menu(View v) {
-        Intent gotoMenuActivity = new Intent(LoginActivity.this, MenuActivity.class);
-        startActivity(gotoMenuActivity);
-    }
-
-    void checkLogin() {
         RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
         StringRequest getRequest = new StringRequest(Request.Method.POST, LOGIN_URL,
                 new Response.Listener<String>() {
@@ -132,8 +72,17 @@ public class LoginActivity extends AppCompatActivity {
                         // kalo bener dia kesini
                         try {
                             //dari string response kita bkin jadi JSONObject
+
                             JSONObject jsonObject = new JSONObject(response);
                             Log.i("response API", jsonObject.toString());
+
+                            String userData = jsonObject.optString("data");
+                            JSONObject parseUserData = new JSONObject(userData);
+
+
+
+
+//                            Log.i("User Data", parseUserData.getString("nama_lengkap"));
                             //{'id_user':'9','role':1} diubah menjadi json object
                             //yang mana kita panggil berdasarkan parameternya
 
@@ -145,7 +94,20 @@ public class LoginActivity extends AppCompatActivity {
 //                            Log.i("Role",object.getString("role"));
 //                            String token = jsonObject.getString("token");
 //                            String role = jsonObject.getString("role");
-                            String nama_lengkap = jsonObject.getString("nama_lengkap");
+                            String id_user = getIntent().getStringExtra("id_user");
+                            String nama_lengkap = parseUserData.getString("nama_lengkap");
+                            String alamat = parseUserData.getString("alamat");
+                            String no_ktp = parseUserData.getString("no_ktp");
+                            String no_hp = parseUserData.getString("no_hp");
+                            String point = parseUserData.getString("point");
+                            String picture = parseUserData.getString("picture");
+
+
+//                            Log.i("Nama Lengkap", nama_lengkap);
+//                            Log.i("Alamat", alamat);
+//                            Log.i("Nomor KTP", no_ktp);
+//                            Log.i("Nomor HP", no_hp);
+
                             //String kode = object.getString("kode");
                             //String dv = object.getString("dv");
                             //String email = object.getString("email");
@@ -153,8 +115,15 @@ public class LoginActivity extends AppCompatActivity {
                             //Log.i("Rolesnya",role);
 
 
-                            Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            intent.putExtra("id_user", id_user);
                             intent.putExtra("nama_lengkap", nama_lengkap);
+                            intent.putExtra("alamat", alamat);
+                            intent.putExtra("no_ktp", no_ktp);
+                            intent.putExtra("no_hp", no_hp);
+                            intent.putExtra("point", point);
+                            intent.putExtra("picture", picture);
+
                             //intent.putExtra("role",i);
                             startActivity(intent);
 
@@ -189,14 +158,16 @@ public class LoginActivity extends AppCompatActivity {
                 Map<String, String>  params = new HashMap<String, String>();
                 params.put("email", username);
                 params.put("password", password);
-                params.put("date_login", new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(new Date()));
+
 
                 return params;
             }
         };
 
         queue.add(getRequest);
+
     }
+
 
 
 }

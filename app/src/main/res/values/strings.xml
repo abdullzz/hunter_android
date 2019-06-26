@@ -1,17 +1,27 @@
 <resources>
-    <string name="app_name">hunter</string>
+    <string name="app_name">Hunter</string>
+
     <!--Login strings-->
-    <string name="login">Log In</string>
+    <string name="login">Login</string>
     <string name="signup">Sign Up</string>
-    <string name="alamatemail">Alamat Email</string>
-    <string name="katasandi">Kata Sandi</string>
+    <string name="alamatemail">E-mail</string>
+    <string name="katasandi">Password</string>
     <string name="katasandilagi">Ulangi Kata Sandi</string>
     <string name="ingatsaya">Ingat saya !</string>
-    <string name="lupakatasandi">Lupa kata sandi ?</string>
-    <string name="daftar">Daftar Menjadi Hunter</string>
+    <string name="lupakatasandi">Lupa password ?</string>
+    <string name="daftar">Daftar</string>
     <string name="daftarsignup">Daftar / Sign Up</string>
     <string name="cekemail">Cek Email</string>
-    <string name="namalengkap">Nama Lengkap</string>
+    <string name="namalengkap">Nama</string>
     <string name="perbaruikatasandi">Perbarui Kata Sandi</string>
     <string name="logout">Log Out / Keluar</string>
+    <string name="keteranganlogin">Masukkan E-mail &amp; Password yang terdaftar</string>
+    <string name="persetujuan">Dengan masuk dan mendaftar pada aplikasi ini, maka Anda setuju dengan <b>Aturan Pengguna</b> dan <b>Kebijakan Privasi</b> yang ditetapkan</string>
+    <string name="keterangandaftar">Lengkapi form dibawah ini untuk mendaftar</string>
+    <string name="keteranganforgot">Masukkan E-mail yang terdaftar untuk memperbaharui <i>password</i></string>
+    <string name="perbaruipassword">Perbarui Password</string>
+    <string name="petunjukperbaruanpassword">Instruksi dalam melakukan perbaruan <i>password</i> akan dikirim ke <i>e-mail</i> terdaftar yang dituju</string>
+    <string name="petunjukotp">Masukan kode yang terkirim ke <i>e-mail</i></string>
+    <string name="kirimulangkode">Minta kode baru</string>
+    <string name="berikutnya">Berikutnya</string>
 </resources>

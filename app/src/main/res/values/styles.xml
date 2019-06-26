@@ -1,22 +1,18 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/merah</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/dark_blue</item>
         <item name="colorAccent">@color/colorAccent</item>
-
-
     </style>
 
-    <style name="HunterHeader" parent="Theme.AppCompat.Light.NoActionBar">
-        <!--<item name="android:background">@color/putih</item>-->
-        <!--<item name="android:textColor">@color/birugelap</item>-->
-        <item name="android:displayOptions">useLogo|showHome</item>
+    <style name="StyledEditText">
+        <item name="android:textColorHint">@color/putih</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:colorControlNormal">@color/putih</item>
+        <item name="android:colorControlActivated">@color/putih</item>
     </style>
 
-    <style name="HunterTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorAccent">@color/orange</item>
-    </style>
 </resources>
